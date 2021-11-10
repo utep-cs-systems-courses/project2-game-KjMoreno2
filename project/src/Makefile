@@ -10,19 +10,24 @@ AS = msp430-elf-as
 
 all: toy.elf
 
-toy.elf: ${COMMON_OBJECTS} main.o switches.o stateMachines.o buzzer.o led.o wdInterruptHandler.o p2_interrupt_handler.o
+toy.elf: ${COMMON_OBJECTS} main.o switches.o stateMachines.o buzzer.o led.o wdInterruptHandler.o p2_interrupt_handler.o dim_sequence_c.o 
+	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
+
+toy2.elf: ${COMMON_OBJECTS} main.o switches.o stateMachines.o buzzer.o led.o wdInterruptHandler.o p2_interrupt_handler.o dim_sequence_s.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
 
 load: toy.elf
 	msp430loader.sh toy.elf
 
+load2: toy2.elf
+	msp430loader.sh toy2.elf
+
 clean:
 	rm -f *.o *.c~ *.h~ *~ *.c# *.elf
 
-#dim_sequence_c.o: led.h stateMachines.h
+dim_sequence_c.o: led.h stateMachines.h
 
-#dim_sequence_s.o: led.h stateMachines.h
-
+dim_sequence_s.o: led.h stateMachines.h
 
 led.o: led.c led.h
 

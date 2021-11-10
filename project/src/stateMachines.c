@@ -129,7 +129,7 @@ void greenDim75(){
     break;
   }
 }
-
+/*
 void dim_sequence(){
   static int dimState = 0;
 
@@ -153,7 +153,7 @@ void dim_sequence(){
     break;
   }
 }
-
+*/
 // Il vento d'oro
 void playSong(){
   static char currNote =0;
@@ -184,7 +184,7 @@ void playSong2(){
   }
   
 }
-
+//dishonored
 void playSong3(){
   static char currNote = 0;
 

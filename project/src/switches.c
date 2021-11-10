@@ -52,6 +52,7 @@ void switch_interrupt_handler(){
     oddPress1 = 0, oddPress2 = 0, oddPress4 =0;
   }
   else if (prev4 != sw4Down && sw4Down){
+    oddPress4 ^= 1;
     oddPress1 = 0, oddPress2 = 0, oddPress3 = 0;
   }
 }
