@@ -12,6 +12,7 @@ int oddPress4 = 0;
 
 void __interrupt_vec(WDT_VECTOR) WDT () {
   static int count = 0;
+  int dimState = 0;
 
   count++;
 
@@ -32,8 +33,8 @@ void __interrupt_vec(WDT_VECTOR) WDT () {
     playSong3();
     count = 0;
   }
-  else if ((count % 125) == 0 && oddPress4 == 1){
-    buzzer_set_period(0);
+  else if ((count % 32) == 0 && oddPress4 == 1){
+    buzzer_set_period(0);  
     dim_sequence();
     count = 0;
   }

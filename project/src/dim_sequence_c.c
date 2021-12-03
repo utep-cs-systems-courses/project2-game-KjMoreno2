@@ -3,7 +3,7 @@
 
 void dim_sequence(){
   static int dimState = 0;
-
+  
   switch (dimState){
   case 0:
     redDim50();
@@ -17,8 +17,8 @@ void dim_sequence(){
     break;
   case 2:
     redDim25();
-    greenDim50();
-    dimState = 0;
+    greenDim75();
+    dimState =0;
     break;
   default:
     break;

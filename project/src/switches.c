@@ -32,11 +32,12 @@ void switch_interrupt_handler(){
   int prev2 = sw2Down;
   int prev3 = sw3Down;
   int prev4 = sw4Down;
-
+  
+  //check if the button has been pressed
   sw1Down = (p2val & SW1) ? 0 : 1;
   sw2Down = (p2val & SW2) ? 0 : 1;
   sw3Down = (p2val & SW3) ? 0 : 1;
-  sw4Down = (p2val & SW3) ? 0 : 1;
+  sw4Down = (p2val & SW4) ? 0 : 1;
 
   if (prev1 != sw1Down && sw1Down){
     oddPress1 ^= 1;

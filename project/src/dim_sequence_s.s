@@ -5,11 +5,12 @@
 dimState:	 .word 0
 
 	.text
-	.extern redDim50
-	.extern greenDim50
 	.extern redDim75
 	.extern greenDim25
 	.extern redDim25
+	.extern greenDim75
+	.extern redDim50
+	.extern greenDim50
 	.global dim_sequence
 dim_sequence:
 	cmp #1, &dimState 	;switch statement check if dim state 0, 1, 2
@@ -30,7 +31,7 @@ case_1:
 	jmp out
 case_2:
 	call #redDim25
-	call #greenDim50
+	call #greenDim75
 	mov #0, &dimState
 	jmp out
 out:

@@ -119,8 +119,10 @@ void greenDim75(){
     break;
   case 1:
     toggle_green++;
+    break;
   case 2:
     toggle_green++;
+    break;
   case 3:
     green_on(1);
     toggle_green = 0;
